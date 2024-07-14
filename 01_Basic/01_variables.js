@@ -14,3 +14,5 @@ accountPassword = "changed123"
 accountCity = "Multan"
 
 console.table([accountId, accountEmail, accountPassword, accountCity, accountState])
+
+console.log(typeof(accountEmail), typeof(accountId))
