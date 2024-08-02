@@ -17,28 +17,49 @@
         <p>Lorem ipsum dolor sit amet.</p>
     </div>
     <ul>
-        <li>one</li>
-        <li>two</li>
-        <li>three</li>
+        <li class="list-item">one</li>
+        <li class="list-item">two</li>
+        <li class="list-item">three</li>
+        <li class="list-item">four</li>
     </ul>
-</body>
-</html>
 
-/*
+    <script>
+        /*const tempLiList = document.querySelectorAll('li')
+        tempLiList.forEach( (l) => {
+            l.style.backgroundColor = 'red'
+        })*/
+
+        // to convert html collection into array using className
+        const items = document.getElementsByClassName('list-item') // returns html collection
+        const itemsArray = Array.from(items)
+        itemsArray.forEach( (i) => {
+            i.style.color = 'red'
+        })
+    </script>
+
+<!-- 
 1) doucment.getElementById('title').style.backgroundColor = "red"
-1) doucment.getElementById('title').style.padding = "14px"
-1) doucment.getElementById('title').textContent ==> gives all content whether it is display hidden by the css
-1) doucment.getElementById('title').innerText ==> given those content which visible on page
-1) doucment.getElementById('title').innerHTML ==> given all content with html tags/styling
+2) doucment.getElementById('title').style.padding = "14px"
+3) doucment.getElementById('title').textContent ==> gives all content whether it is display hidden by the css
+4) doucment.getElementById('title').innerText ==> given those content which visible on page
+5) doucment.getElementById('title').innerHTML ==> given all content with html tags/styling
 ------------------------------------------------------------------------------------------------
-1) document.querySelector('#title') ==> select elements by id as we select in css
-1) document.querySelector('.heading') ==> select elements by class name as we select in css
-1) document.querySelector('input[type="password"]')
-1)
-1)
+6) document.querySelector('#title') ==> select elements by id as we select in css
+7) document.querySelector('.heading') ==> select elements by class name as we select in css
+8) document.querySelector('input[type="password"]')
+------------------------------------------------------------------------------------------------
+9) const s1 = document.querySelector('li') // select first element of li
+    const s2 = s1.querySelector('li')
+    s2.style.backgroundColor = 'red'
+    s2.style.padding = '14px'
+1) const tempLiList = doucemnt.querySelector('ul') return all the nodes list
+    tempLiList[0].style.color = 'green'
+1) 
 1)
 1)
 1)
 1)
 1) 
-*/
+ -->
+</body>
+</html>
