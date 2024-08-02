@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM | Creating Element in Dom</title>
+</head>
+<body>
+    
+</body>
+<script>
+    const div = document.createElement('div')
+    // div.className = 'main'
+    div.setAttribute("class", "main")
+    div.id = Math.round((Math.random() * 100) +1)
+
+    const txt = document.createTextNode("Chai aur Code")
+    div.appendChild(txt)
+
+    document.body.appendChild(div)
+    console.log(div);
+    div.style.backgroundColor = 'orange'
+    div.style.padding = '20px'
+    div.style.textAlign = 'center'
+
+</script>
+</html>
