@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #212121; color: white;">
+        <ul class="language">
+            <li>Javascript</li>
+        </ul>
+</body>
+<script>
+    /*
+    // create Element
+    const div = document.createElement('div')
+    div.setAttribute("class", "main")
+    const txt = document.createTextNode("chai aur code")
+    div.appendChild(txt)
+
+    document.body.appendChild(div)
+    console.log(div);*/
+
+    // ------------------------------------------------------
+    // adding new li in above li
+    function addLang(langName) {
+        const li = document.createElement('li')
+        li.innerHTML = `${langName}`
+        document.querySelector('.language').appendChild(li)
+    }
+    addLang("python")
+    addLang("java")
+
+    // optimize way as innerHTML traverse the whole tree but it doesnot
+    function addOptiLang(langName) {
+        const li = document.createElement('li') //create new li
+        li.appendChild(document.createTextNode(langName)) // added text to li
+        document.querySelector('.language').appendChild(li) // added li to language class
+    }
+    addLang('Swift')
+    addLang('java')
+    addLang('go')
+
+    // -----------------------------------------------------------------
+    // edit
+    function editLang(child, replacewith) {
+        const selectChild = document.querySelector(`li:nth-child(${child})`)
+        const li = document.createElement('li')
+        li.appendChild(document.createTextNode(replacewith))
+        selectChild.replaceWith(li)
+    }
+    editLang(3, 'c++')
+
+    // -----------------------------------------------------------------
+    // remove
+    function removeLang(langNumber) {
+        const selectChild = document.querySelector(`li:nth-child(${langNumber})`)
+        
+        const h = document.querySelector('.language')
+        const b = h.children[langNumber-1].innerHTML
+
+        const li = document.createElement('li')
+        li.style.color = 'red'
+        li.innerHTML = `${(b)} is removed successfully`
+        document.querySelector('.language').appendChild(li)
+
+        selectChild.remove()
+    }
+    removeLang(2)
+    
+</script>
+</html>
