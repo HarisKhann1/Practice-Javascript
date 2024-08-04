@@ -1,0 +1,27 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    transform: translatey(200px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+label{
+    display: block;
+    margin-top: 8px;
+}
+
+.result{
+    margin-top: 10px;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+button{
+    margin-top: 8px;
+}
