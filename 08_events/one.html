@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>htnml Events </title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing image</h2>
+    <div >
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" ></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+   </div>
+</body>
+<script>
+/*
+    // this approch do not give us more feature
+    document.getElementById('owl').onclick = function() {
+        alert('owl clicked')
+    }
+*/
+/*
+   // approch that we should use: (recomended)
+    document.getElementById('owl').addEventListener('click', function(e) {
+        alert('owl clicked')
+    })
+*/  
+/*
+    // event propagation ==> determines in which order the elements receive the event. There are two ways to handle this event propagation order of HTML DOM is Event Bubbling and Event Capturing.
+    // Event bubbling ==> buttom to up ==> first 'owl' will excute then 'images'
+
+    document.getElementById('images').addEventListener('click', function(e) {
+        alert('click on images')
+    }, false) //bydefualt, it is false
+    
+    document.getElementById('owl').addEventListener('click', function(e) {
+        alert('owl clicked')
+        e.stopPropagation //used when you donot want to bubble your event
+    }, false) //bydefualt, it is false
+*/
+/*
+    // Event capturing ==> up to buttom ==> first 'images' will excute then 'owl'
+
+    document.getElementById('images').addEventListener('click', function(e) {
+        alert('click on images')
+    }, true) //bydefualt, it is false
+    
+    document.getElementById('owl').addEventListener('click', function(e) {
+        alert('owl clicked')
+    }, true) //bydefualt, it is false
+*/
+/*
+    // preventDefult() and stopPropagtion on 'google'
+    document.getElementById('google').addEventListener('click', function(e) {
+        e.stopPropagation();
+        e.preventDefault()
+        alert('used stopPropagation')
+    },false)
+*/
+
+// a small project, where when we click on image the image vanish/hide
+    document.getElementById('images').addEventListener('click', function(e) {
+        console.log(e.target.parentNode);
+        if (e.target.tagName === 'IMG') {
+            console.log(e.target.tagName);
+            let removeImage = e.target.parentNode
+            removeImage.remove() // first method
+        }
+
+        // removeImage.parentNode.removeChild(removeImage) //second method
+    })
+</script>
+</html>
