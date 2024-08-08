@@ -1,0 +1,28 @@
+// setTimeout() and clearTimeout()
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #212121; color: aliceblue;">
+    <h1>Chai aur code</h1>
+    <button id="stop">button</button>
+</body>
+<script>
+
+    const changeText = function() {
+        document.querySelector('h1').
+        innerHTML = 'Best JS series'
+    }
+    const StopME = setTimeout(changeText, 3000); //text will change after 2seconds
+
+    document.querySelector('#stop').addEventListener('click', function() {
+        clearTimeout(StopME)
+        console.log('stop');
+        
+    })
+</script>
+</html>
