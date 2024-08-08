@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #212121; color: aliceblue;">
+    <h1>Chai aur Javascript</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    function sayDate(str, str2) {
+        console.log(`${str} ${str2} ${Date.now()}`);
+    }
+
+    let stopIt;
+    document.querySelector('#start').addEventListener('click', (e)=> {
+        clearInterval(stopIt)
+        stopIt = setInterval(sayDate, 1000, 'hi', 'by');
+    })
+
+    document.querySelector('#stop').addEventListener('click', (e)=> {
+        clearInterval(stopIt)
+    })
+</script>
+</html>
