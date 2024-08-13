@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Faulty Calulator</title>
+
+</head>
+<body>
+    <div class="container">
+        <h1>Faulty Calulator</h1>
+        <h3>This calculator may produce 10% calculation wrongly</h3>
+        <p>If the randow value is below 10 then calulator will give wrong output else correct</p>
+        <h4 id="random"></h4>
+        <form action="#">
+            <label for="num1">Num1: </label>
+            <input id ="num1" type="number">
+
+            <label for="select">Select Operator</label>
+            
+            <select id="operators">
+                <option value="">select</option>
+                <option value="+"> + </option>
+                <option value="-"> - </option>
+                <option value="*"> * </option>
+                <option value="/"> / </option>
+            </select>
+
+            <label for="num1">Num1: </label>
+            <input id="num2" type="number">
+
+            <button id="button" type="submit">Calculate</button>
+        </form>
+        <p id="result"></p>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
