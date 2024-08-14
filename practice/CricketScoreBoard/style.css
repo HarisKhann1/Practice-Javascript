@@ -1,0 +1,97 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+li {
+    list-style: none;
+    background-color: lightsalmon;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #212121;
+}
+
+h1{
+    color: lightblue;
+    margin-bottom: 10px;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border: 2px solid #000;
+    background-color: #232b2b;
+    color: aliceblue;
+    padding: 30px;
+}
+
+.runs ul, .rules ul{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.run-box {
+    padding: 4px 8px;
+    border-radius: 2px;
+}
+
+.run-box:hover {
+    background-color: #f4f4f4;
+    color: #000;
+    cursor: pointer;
+}
+
+.rules-box {
+    padding: 5px 8px;
+    border-radius: 2px;
+    margin-bottom: 10px;  
+}
+
+.rules-box:hover {
+    background-color: #f4f4f4;
+    color: #000;
+    cursor: pointer;
+}
+
+.run-circle{
+    border: 1px solid white;
+    border-radius: 50%;
+    padding: 4px;
+}
+
+#scoreHistory{
+    margin-top: 10px;
+    color: aquamarine;
+}
+
+#addover{
+    background-color: aquamarine;
+    color: black;
+}
+
+.inputs{
+    color: lightblue;
+    display: flex;
+    column-gap: 10px;
+}
+
+#information{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    color: lightblue;
+}
